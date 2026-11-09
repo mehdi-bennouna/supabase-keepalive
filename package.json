@@ -4,11 +4,24 @@
 	"private": true,
 	"description": "Cloudflare Worker that pings free-tier Supabase projects on a schedule so they don't get paused for inactivity.",
 	"type": "module",
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev --test-scheduled",
+		"format": "prettier --write .",
+		"logs": "wrangler tail",
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {
+		"arktype": "^2.2.9",
+		"ky": "^2.2.0"
+	},
 	"devDependencies": {
+		"@cloudflare/workers-types": "^5.20261109.1",
 		"@ianvs/prettier-plugin-sort-imports": "^4.7.1",
 		"prettier": "^3.9.10",
 		"prettier-plugin-packagejson": "^3.1.0",
-		"typescript": "^7.0.2"
+		"typescript": "^7.0.2",
+		"wrangler": "^4.158.0"
 	},
 	"packageManager": "pnpm@12.4.2",
 	"devEngines": {

@@ -1,0 +1,14 @@
+{
+	"projects": [
+		{
+			"name": "my-app",
+			"url": "https://your-project-ref.supabase.co",
+			"key": "sb_publishable_your-publishable-key"
+		},
+		{
+			"name": "side-project",
+			"url": "https://another-project-ref.supabase.co",
+			"key": "sb_publishable_another-publishable-key"
+		}
+	]
+}
