@@ -3,7 +3,7 @@ create table if not exists public.keepalive_heartbeats (
   pinged_at timestamptz not null default now()
 );
 
-comment on table public.keepalive_heartbeats is 'Time of the last keep-alive ping from supabase-edge-ping. Always a single row, written by public.keepalive().';
+comment on table public.keepalive_heartbeats is 'Time of the last keep-alive ping from supabase-keepalive. Always a single row, written by public.keepalive().';
 
 alter table public.keepalive_heartbeats enable row level security;
 
