@@ -21,5 +21,13 @@
 		"^\\.(/index)?$"
 	],
 	"importOrderTypeScriptVersion": "7.0.2",
-	"importOrderCaseSensitive": false
+	"importOrderCaseSensitive": false,
+	"overrides": [
+		{
+			"files": "*.jsonc",
+			"options": {
+				"trailingComma": "none"
+			}
+		}
+	]
 }
