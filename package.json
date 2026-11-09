@@ -7,10 +7,16 @@
 	"devDependencies": {
 		"@ianvs/prettier-plugin-sort-imports": "^4.7.1",
 		"prettier": "^3.9.10",
-		"prettier-plugin-packagejson": "^3.1.0"
+		"prettier-plugin-packagejson": "^3.1.0",
+		"typescript": "^7.0.2"
 	},
 	"packageManager": "pnpm@12.4.2",
 	"devEngines": {
+		"runtime": {
+			"name": "node",
+			"version": "24.21.0",
+			"onFail": "download"
+		},
 		"packageManager": {
 			"name": "pnpm",
 			"version": "12.4.2",

@@ -20,6 +20,6 @@
 		"^\\.(?!.*/index$)(?!^\\.$)(?!^\\./$)\\/.+$",
 		"^\\.(/index)?$"
 	],
-	"importOrderTypeScriptVersion": "6.0.0",
+	"importOrderTypeScriptVersion": "7.0.2",
 	"importOrderCaseSensitive": false
 }
