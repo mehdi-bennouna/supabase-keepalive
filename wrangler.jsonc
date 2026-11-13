@@ -1,6 +1,6 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "supabase-keepalive",
+	"name": "supabase-keep-alive",
 	"main": "src/index.ts",
 	"compatibility_date": "2026-11-01",
 

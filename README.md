@@ -1,9 +1,9 @@
-# supabase-keepalive
+# supabase-keep-alive
 
 Keeps your Free-plan Supabase projects from being paused for inactivity.
 
 Supabase pauses a Free project when it gets
-[too little database activity over a week](https://supabase.com/docs/guides/platform/free-project-pausing). supabase-keepalive runs on
+[too little database activity over a week](https://supabase.com/docs/guides/platform/free-project-pausing). supabase-keep-alive runs on
 Cloudflare once a day and writes a timestamp to each of your projects' databases, which counts as activity. It runs on Cloudflare's free
 Workers plan.
 
@@ -77,7 +77,7 @@ Then edit `config.json` with one entry per project:
 | `key`  | The **publishable** key from **Project Settings → API Keys**.                                                   |
 
 Only publishable keys are accepted. They're designed to be public, the same key your app gives to every visitor, so they're safe to use
-here. Secret keys (`sb_secret_…`) are refused: they give full access to your data, and supabase-keepalive doesn't need it.
+here. Secret keys (`sb_secret_…`) are refused: they give full access to your data, and supabase-keep-alive doesn't need it.
 
 `config.json` stays on your computer. Git ignores it, so it won't be committed by accident.
 
@@ -122,7 +122,7 @@ pnpm wrangler secret put CONFIG < config.json
 
 The new list takes effect immediately. You don't need to deploy again.
 
-You can also edit `CONFIG` in the Cloudflare dashboard under **Workers & Pages → supabase-keepalive → Settings → Variables and Secrets**.
+You can also edit `CONFIG` in the Cloudflare dashboard under **Workers & Pages → supabase-keep-alive → Settings → Variables and Secrets**.
 Paste the whole list as JSON, then select **Deploy**.
 
 ## Checking that it works
@@ -139,7 +139,7 @@ Paste the whole list as JSON, then select **Deploy**.
     pnpm run logs
     ```
 
-- **Past runs:** in the Cloudflare dashboard under **Workers & Pages → supabase-keepalive → Logs**. Each project gets one entry per run,
+- **Past runs:** in the Cloudflare dashboard under **Workers & Pages → supabase-keep-alive → Logs**. Each project gets one entry per run,
   whose message starts with `ok` or `FAILED`.
 
 Nothing notifies you when a ping fails, so check now and then. A ping that keeps failing for a week means that project will be paused.
@@ -190,12 +190,12 @@ The list you uploaded or saved in the dashboard is invalid, and the logs say why
 
 ### A project got paused anyway
 
-Restore it from the Supabase dashboard; supabase-keepalive can't wake a paused project. Then look in the logs for failed pings before the
+Restore it from the Supabase dashboard; supabase-keep-alive can't wake a paused project. Then look in the logs for failed pings before the
 pause.
 
 ## Limits
 
-- **Projects that are already paused** have to be restored from the Supabase dashboard first. supabase-keepalive keeps them awake from then
+- **Projects that are already paused** have to be restored from the Supabase dashboard first. supabase-keep-alive keeps them awake from then
   on.
 - **About 25 projects** at most. A free Cloudflare account allows 50 requests per run, and each project can use two (a ping and a retry). A
   `CONFIG` secret also holds at most 5 KB, which fits about as many.

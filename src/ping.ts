@@ -24,7 +24,7 @@ export async function pingProject(project: Project): Promise<PingResult> {
 		const res = await ky.post(`${project.url}/rest/v1/rpc/keepalive`, {
 			headers: {
 				"apikey": project.key,
-				"User-Agent": "supabase-keepalive",
+				"User-Agent": "supabase-keep-alive",
 			},
 			json: {},
 			timeout: 20_000,
